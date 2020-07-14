@@ -1,0 +1,106 @@
+working with the git
+
+go to your AWS management console
+
+login with your root user account
+
+select services and then EC2
+
+Launch  a LINUX MACHINE  (AMAZON LINUX AMI 2018.03.0 (HVM)
+
+//note:- you don't select AMAZON LINUX 2 AMI(HVM)
+
+
+ssh into it with putty and run the following commands
+
+$sudo su
+
+$yum -y update		//(update the repository)
+
+$yum install git		//(to install the git )
+
+$yum install tree -y		// to install tree command
+
+$git --version		//to verfiy the git installed and check its version
+
+//the first thing we do after the git installation is
+
+//to setup the global user name and user email address i need to run these commands
+
+
+$git config --global user.name "jeetubhai"		// you may customise it to yours name
+
+$git config --global user.email "engrjsingh4472@gmail.com"  //you may customise it to yours email
+
+$git conif --global colour.ui true
+
+//so in a particulare project we may have more than 1 developer contributing codes to the central repository i.e. git
+
+// so here i m going to create a project into my local repository as a developler 1 and after that  i would like to push it to the central repository
+
+
+$mkdir dev1			// create a folder (dev1) as local repository for developer1
+
+$cd dev1				//get into that folder
+
+now every project file has to pass through these three stages 
+
+1. untracked
+2. stage
+3. commited
+
+
+command			
+$ls -la			// verify the existing files or directories... it will show empty directory
+
+
+$git init 			// to initialise the git in the directory dev1
+
+$ls -la			// verify that it list .git directory
+
+$tree .git			//it will display the sub directories of the .git
+
+//now let the developer1 starts the coding... i.e. creating files...i.e. file1.txt
+
+$touch 1.txt		// create a file named 1.txt
+
+$git status		// to see the state of 1.txt
+
+$git add 1.txt			// to add the file to the stage
+
+$git status		// to see the state of 1.txt again
+
+
+$git commit -m "1.txt added by dev1"	// to add the file to the commited...
+
+//now let the developer1 starts the coding... i.e. creating files...i.e. file2.txt
+
+$touch 2.txt		// create a file named 2.txt
+
+$git status		// to see the state of 2.txt
+
+$git add 2.txt			// to add the file to the stage
+
+$git status		// to see the state of 2.txt again
+
+
+$git commit -m "2.txt added by dev1"	// to add the file to the commited...
+
+
+
+//now let the developer1 starts the coding... i.e. creating files...i.e. file3.txt
+
+$touch 3.txt		// create a file named 3.txt
+
+$git status		// to see the state of 3.txt
+
+$git add 3.txt			// to add the file to the stage
+
+$git status		// to see the state of 3.txt again
+
+
+$git commit -m "3.txt added by dev1"	// to add the file to the commited...
+
+
+
+
